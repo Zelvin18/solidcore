@@ -17,10 +17,11 @@ export default function Hero() {
           quality={70}
           placeholder="blur"
           blurDataURL={BANNER_BLUR}
-          className="object-cover opacity-70"
+          className="object-cover object-center opacity-90 lg:opacity-70"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-950/90 via-navy-950/55 to-navy-900/25" />
+        {/* Vertical wash on mobile so the truck stays visible; left-weighted on desktop for text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-950/80 via-navy-950/45 to-navy-950/85 lg:bg-gradient-to-r lg:from-navy-950/90 lg:via-navy-950/55 lg:to-navy-900/25" />
       </div>
 
       <div className="container-x relative">

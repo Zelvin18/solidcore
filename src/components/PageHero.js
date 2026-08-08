@@ -16,10 +16,10 @@ export default function PageHero({ eyebrow, title, description, image, crumb }) 
             quality={70}
             placeholder="blur"
             blurDataURL={NAVY_BLUR}
-            className="object-cover opacity-60"
+            className="object-cover object-center opacity-80 lg:opacity-60"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-950/85 via-navy-950/55 to-navy-900/35" />
+          <div className="absolute inset-0 bg-gradient-to-b from-navy-950/80 via-navy-950/50 to-navy-950/85 lg:bg-gradient-to-r lg:from-navy-950/85 lg:via-navy-950/55 lg:to-navy-900/35" />
         </div>
       )}
       <div className="container-x relative py-16 sm:py-20 lg:py-24">
