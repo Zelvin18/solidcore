@@ -7,8 +7,8 @@ import { BANNER_BLUR } from "@/lib/blur";
 export default function Hero() {
   return (
     <section className="relative overflow-hidden navy-gradient">
-      {/* Background image */}
-      <div className="absolute inset-0">
+      {/* Background image — desktop only (wide banner crops badly on tall mobile screens) */}
+      <div className="absolute inset-0 hidden lg:block">
         <Image
           src="/gallery/banner.jpeg"
           alt="SolidCore concrete mixer truck"
@@ -17,11 +17,10 @@ export default function Hero() {
           quality={70}
           placeholder="blur"
           blurDataURL={BANNER_BLUR}
-          className="object-cover object-center opacity-90 lg:opacity-70"
+          className="object-cover object-center opacity-70"
           priority
         />
-        {/* Vertical wash on mobile so the truck stays visible; left-weighted on desktop for text contrast */}
-        <div className="absolute inset-0 bg-gradient-to-b from-navy-950/80 via-navy-950/45 to-navy-950/85 lg:bg-gradient-to-r lg:from-navy-950/90 lg:via-navy-950/55 lg:to-navy-900/25" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-950/90 via-navy-950/55 to-navy-900/25" />
       </div>
 
       <div className="container-x relative">
@@ -79,6 +78,25 @@ export default function Hero() {
                 <Icon name="clock" className="h-5 w-5 text-orange-300" />
                 Quotes within 24 hrs
               </span>
+            </div>
+
+            {/* Full truck image — mobile/tablet only (whole vehicle visible, no crop) */}
+            <div
+              className="mt-10 overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/15 shadow-2xl animate-fadeUp lg:hidden"
+              style={{ animationDelay: "300ms" }}
+            >
+              <Image
+                src="/gallery/banner.jpeg"
+                alt="SolidCore 10m³ concrete mixer truck"
+                width={1268}
+                height={430}
+                sizes="100vw"
+                quality={75}
+                placeholder="blur"
+                blurDataURL={BANNER_BLUR}
+                className="h-auto w-full"
+                priority
+              />
             </div>
           </div>
 
