@@ -62,6 +62,16 @@ export default function Footer() {
                 Request a Quotation
               </Link>
             </li>
+            <li className="pt-2">
+              <a
+                href={site.posUrl}
+                className="inline-flex items-center gap-1.5 text-white/50 transition-colors hover:text-orange-300"
+                rel="noopener"
+              >
+                <Icon name="shield" className="h-3.5 w-3.5" />
+                Staff Login
+              </a>
+            </li>
           </ul>
         </div>
 

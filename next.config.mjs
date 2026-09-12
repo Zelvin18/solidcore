@@ -53,6 +53,13 @@ const nextConfig = {
       },
     ];
   },
+  // Easy-access shortcuts to the staff POS (hosted separately at webstar).
+  async redirects() {
+    return [
+      { source: "/pos", destination: "https://pos.solidcoreug.com", permanent: true },
+      { source: "/staff", destination: "https://pos.solidcoreug.com", permanent: true },
+    ];
+  },
 };
 
 export default nextConfig;

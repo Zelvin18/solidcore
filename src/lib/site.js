@@ -5,6 +5,8 @@ export const site = {
   shortName: "SolidCore",
   initials: "SCS",
   url: "https://solidcoreug.com",
+  // Staff point-of-sale system (separate PHP app hosted at webstar).
+  posUrl: "https://pos.solidcoreug.com",
   tagline: "Building East Africa — One Project at a Time",
   intro:
     "Equipment hire, concrete logistics and bulk haulage for contractors, developers and infrastructure agencies across Uganda and East Africa.",
