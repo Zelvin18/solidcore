@@ -25,7 +25,9 @@ const csp = [
 
 const securityHeaders = [
   { key: "Content-Security-Policy", value: csp },
-  { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
+  // No includeSubDomains: mail/ftp/pop subdomains are hosted at the registrar (webstar), not Vercel,
+  // and forcing strict HTTPS on them would hard-block the hosting panel/webmail.
+  { key: "Strict-Transport-Security", value: "max-age=63072000" },
   { key: "X-Content-Type-Options", value: "nosniff" },
   { key: "X-Frame-Options", value: "SAMEORIGIN" },
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
