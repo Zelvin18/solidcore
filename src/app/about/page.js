@@ -10,6 +10,7 @@ export const metadata = {
   title: "About Us",
   description:
     "SolidCore Construction Supplies Limited is a Kampala-based construction support company specialising in equipment hire, concrete logistics and bulk haulage across East Africa.",
+  alternates: { canonical: "/about" },
 };
 
 const values = [

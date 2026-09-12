@@ -15,9 +15,17 @@ export function generateStaticParams() {
 export function generateMetadata({ params }) {
   const product = getProduct(params.slug);
   if (!product) return { title: "Product not found" };
+  const canonical = `/products/${product.slug}`;
   return {
-    title: product.name,
-    description: product.short,
+    title: `${product.name} in Kampala, Uganda`,
+    description: `${product.short} Supplied by SolidCore Construction Supplies across Uganda. Request a free quotation.`,
+    alternates: { canonical },
+    openGraph: {
+      title: `${product.name} — SolidCore Construction Supplies`,
+      description: product.short,
+      url: canonical,
+      images: [{ url: product.hero, alt: product.name }],
+    },
   };
 }
 

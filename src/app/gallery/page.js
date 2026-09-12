@@ -6,7 +6,8 @@ import Reveal from "@/components/Reveal";
 export const metadata = {
   title: "Gallery",
   description:
-    "A look at SolidCore's fleet and work on the ground — branded concrete mixer trucks, high-rise pumps, cement supply and logistics across Uganda.",
+    "A look at SolidCore's fleet and work on the ground — branded concrete mixer trucks, high-rise pumps, cement, steel rods and logistics across Uganda.",
+  alternates: { canonical: "/gallery" },
 };
 
 const shots = [

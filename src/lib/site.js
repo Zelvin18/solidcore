@@ -4,6 +4,7 @@ export const site = {
   legalName: "SolidCore Construction Supplies Limited",
   shortName: "SolidCore",
   initials: "SCS",
+  url: "https://solidcoreug.com",
   tagline: "Building East Africa — One Project at a Time",
   intro:
     "Equipment hire, concrete logistics and bulk haulage for contractors, developers and infrastructure agencies across Uganda and East Africa.",

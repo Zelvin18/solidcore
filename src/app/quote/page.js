@@ -7,7 +7,8 @@ import { site, whatsappLink } from "@/lib/site";
 export const metadata = {
   title: "Request a Quotation",
   description:
-    "Request a fast, no-obligation quotation from SolidCore Construction Supplies — concrete mixer trucks, pumps, cement and logistics across Uganda and East Africa.",
+    "Request a fast, no-obligation quotation from SolidCore Construction Supplies — concrete mixer trucks, pumps, cement, steel rods and logistics across Uganda and East Africa.",
+  alternates: { canonical: "/quote" },
 };
 
 const assurances = [

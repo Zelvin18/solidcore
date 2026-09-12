@@ -5,9 +5,10 @@ import Reveal from "@/components/Reveal";
 import { products } from "@/data/products";
 
 export const metadata = {
-  title: "Our Products & Fleet",
+  title: "Our Products & Fleet — Concrete, Pumps, Cement, Steel & Haulage",
   description:
-    "Explore SolidCore's construction supply range: 10m³ concrete mixer trucks, concrete pumps for 7 to 20+ floors, quality cement supply and heavy-duty logistics.",
+    "Explore SolidCore's construction supply range in Uganda: 10m³ concrete mixer trucks, concrete pumps for 7 to 20+ floors, cement, steel reinforcement bars and heavy-duty logistics.",
+  alternates: { canonical: "/products" },
 };
 
 export default function ProductsPage() {

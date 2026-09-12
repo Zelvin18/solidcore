@@ -7,7 +7,8 @@ import { site, whatsappLink } from "@/lib/site";
 export const metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with SolidCore Construction Supplies Ltd in Kampala — offices in Naalya Estate and Nakawa. Call, email or WhatsApp us for equipment hire, concrete and logistics.",
+    "Get in touch with SolidCore Construction Supplies Ltd in Kampala — offices in Naalya Estate, Nakawa and Namugongo Sonde. Call, email or WhatsApp us for concrete, cement, steel and logistics.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {
