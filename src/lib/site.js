@@ -13,7 +13,11 @@ export const site = {
   // Digits only, for tel: and WhatsApp deep links
   phonePrimaryRaw: "256700300032",
   whatsapp: "256700300032",
-  email: "operations@solidcoreconstruction.co.ug",
+  email: "operations@solidcoreug.com",
+  // Every website quotation request is emailed to ALL of these.
+  quoteRecipients: ["manager@solidcoreug.com", "operations@solidcoreug.com"],
+  // Sender identity for website emails (domain must be verified in Resend).
+  quoteFrom: "SolidCore Website <quotes@solidcoreug.com>",
   hours: "Monday – Saturday, 7:00 AM – 6:00 PM (Emergency support for active projects)",
   offices: [
     {

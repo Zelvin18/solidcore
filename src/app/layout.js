@@ -3,6 +3,7 @@ import { Inter, Sora } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsappFab from "@/components/WhatsappFab";
+import { Analytics } from "@vercel/analytics/react";
 import { site } from "@/lib/site";
 import { products } from "@/data/products";
 
@@ -101,10 +102,7 @@ export const metadata = {
       "max-video-preview": -1,
     },
   },
-  icons: {
-    icon: "/brand/logo.jpeg",
-    apple: "/brand/logo.jpeg",
-  },
+  // Favicons are served from src/app/favicon.ico, icon.png and apple-icon.png (Next.js file conventions).
 };
 
 // Structured data (JSON-LD) so Google can show rich business results & sitelinks.
@@ -181,6 +179,7 @@ export default function RootLayout({ children }) {
         <main>{children}</main>
         <Footer />
         <WhatsappFab />
+        <Analytics />
       </body>
     </html>
   );

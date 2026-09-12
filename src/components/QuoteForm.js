@@ -82,7 +82,8 @@ export default function QuoteForm() {
 
   if (status === "success") {
     const waLink = whatsappLink(buildMessage());
-    const mailLink = `mailto:${site.email}?subject=${encodeURIComponent(
+    const cc = site.quoteRecipients.filter((e) => e !== site.email).join(",");
+    const mailLink = `mailto:${site.email}?${cc ? `cc=${cc}&` : ""}subject=${encodeURIComponent(
       "Quotation Request — SolidCore"
     )}&body=${encodeURIComponent(buildMessage())}`;
     return (
