@@ -97,6 +97,11 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-display font-bold text-navy-900">{o.label}</h3>
                     <p className="mt-1 text-sm text-navy-600">{o.address}</p>
+                    {o.note && (
+                      <span className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-orange-50 px-3 py-1 text-xs font-semibold text-orange">
+                        {o.note}
+                      </span>
+                    )}
                   </div>
                 </div>
               ))}

@@ -146,6 +146,46 @@ export const products = [
     cta: "Request Cement Supply",
   },
   {
+    slug: "steel-rods",
+    name: "Steel Reinforcement Bars",
+    category: "Building Materials",
+    tagline: "The backbone inside every strong slab, column and beam.",
+    hero: "/gallery/steel-main.jpg",
+    thumb: "/gallery/steel-main.jpg",
+    images: [
+      "/gallery/steel-main.jpg",
+      "/gallery/steel-1.jpg",
+      "/gallery/steel-2.jpg",
+      "/gallery/steel-3.jpg",
+    ],
+    short:
+      "Quality deformed steel reinforcement bars in every common size, supplied by the piece, bundle or tonne to keep your structure strong.",
+    intro:
+      "Concrete is immensely strong in compression but weak in tension — and that's exactly where steel earns its place. Reinforcement bars (rebar) form the hidden skeleton that ties your slabs, columns, beams and foundations together, carrying the loads concrete alone cannot. SolidCore supplies genuine, strength-graded deformed bars with the ribbed profile that grips concrete for a solid mechanical bond. From a handful of Y12s for a residential build to full tonnage for a commercial frame, we deliver consistent, spec-compliant steel on the schedule your programme runs on.",
+    highlights: [
+      "Deformed (ribbed) high-yield bars for a strong concrete bond",
+      "Full range of common sizes, from 8mm up to 25mm and beyond",
+      "Genuine, strength-graded steel with consistent quality",
+      "Supplied by the piece, the bundle or full tonnage",
+      "Standard 12m lengths, cut-to-order on request",
+      "Delivered alongside your cement and concrete in one order",
+    ],
+    specs: [
+      { label: "Product", value: "Deformed / ribbed reinforcement bars (rebar)" },
+      { label: "Common Sizes", value: "Y8, Y10, Y12, Y16, Y20, Y25 (8–25mm)" },
+      { label: "Standard Length", value: "12 metres · cut-to-order available" },
+      { label: "Volumes", value: "Per piece, per bundle or by the tonne" },
+      { label: "Delivery", value: "Scheduled to your casting programme, nationwide" },
+    ],
+    useCases: [
+      "Slabs, beams, columns and ring beams",
+      "Foundations, footings and pile caps",
+      "Retaining walls and water structures",
+      "Precast elements and reinforced blockwork",
+    ],
+    cta: "Request Steel Rods",
+  },
+  {
     slug: "logistics-truck",
     name: "Logistics & Haulage Truck",
     category: "Transport & Haulage",

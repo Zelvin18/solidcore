@@ -23,6 +23,11 @@ export const site = {
       label: "Nakawa Office",
       address: "Nakawa Industrial Area, Kampala, Uganda",
     },
+    {
+      label: "Namugongo Sonde Shop",
+      address: "Namugongo Sonde, Opposite Shell, Kampala, Uganda",
+      note: "Cement & steel rods shop",
+    },
   ],
   region: "Uganda & the wider East African region",
   socials: {

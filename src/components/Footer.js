@@ -93,6 +93,7 @@ export default function Footer() {
                 <span>
                   <span className="block font-semibold text-white">{o.label}</span>
                   {o.address}
+                  {o.note && <span className="block text-orange-300/90">{o.note}</span>}
                 </span>
               </li>
             ))}

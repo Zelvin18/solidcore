@@ -7,6 +7,7 @@ const iconFor = {
   "concrete-mixer-truck": "mixer",
   "concrete-pumps": "building",
   cement: "bag",
+  "steel-rods": "rebar",
   "logistics-truck": "route",
 };
 

@@ -46,7 +46,7 @@ export default function Hero() {
             >
               SolidCore Construction Supplies Ltd keeps Uganda's most demanding projects moving.
               We supply 10m³ concrete mixer trucks, high-rise concrete pumps, quality cement and
-              dependable heavy haulage, all from one trusted partner.
+              steel, and dependable heavy haulage, all from one trusted partner.
             </p>
 
             <div

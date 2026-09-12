@@ -55,6 +55,12 @@ const ICONS = {
       <path d="M8 19h6a4 4 0 0 0 0-8H10a4 4 0 0 1 0-8h6" />
     </>
   ),
+  rebar: (
+    <>
+      <path d="M6 3v18M12 3v18M18 3v18" />
+      <path d="M3 8h18M3 14h18" />
+    </>
+  ),
   check: <path d="M20 6 9 17l-5-5" />,
   arrow: (
     <>

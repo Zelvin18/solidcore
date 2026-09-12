@@ -25,7 +25,7 @@ export const metadata = {
     template: "%s | SolidCore Construction Supplies",
   },
   description:
-    "SolidCore Construction Supplies Ltd supplies 10m³ concrete mixer trucks, concrete pumps (7 to 20+ floors), cement and heavy-duty logistics across Uganda and East Africa. Request a quotation online.",
+    "SolidCore Construction Supplies Ltd supplies 10m³ concrete mixer trucks, concrete pumps (7 to 20+ floors), cement, steel reinforcement bars and heavy-duty logistics across Uganda and East Africa. Request a quotation online.",
   keywords: [
     "concrete mixer truck Uganda",
     "concrete pump hire Kampala",

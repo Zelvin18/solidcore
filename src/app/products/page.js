@@ -23,10 +23,10 @@ export default function ProductsPage() {
 
       <section className="section">
         <div className="container-x">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {products.map((p, i) => (
-              <Reveal key={p.slug} delay={i * 80}>
-                <ProductCard product={p} priority={i < 2} />
+              <Reveal key={p.slug} delay={i * 80} className="h-full">
+                <ProductCard product={p} priority={i < 3} />
               </Reveal>
             ))}
           </div>

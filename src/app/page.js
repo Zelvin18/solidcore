@@ -138,9 +138,9 @@ export default function HomePage() {
             description="Everything your pour needs: the mix, the equipment to place it at height, and the materials and haulage that keep your site fed."
             align="center"
           />
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {products.map((p, i) => (
-              <Reveal key={p.slug} delay={i * 80}>
+              <Reveal key={p.slug} delay={i * 80} className="h-full">
                 <ProductCard product={p} priority={i === 0} />
               </Reveal>
             ))}

@@ -163,7 +163,7 @@ export default function ProductDetail({ params }) {
           <h2 className="font-display text-2xl font-extrabold tracking-tight text-navy-900 sm:text-3xl">
             Explore more of our range
           </h2>
-          <div className="mt-8 grid gap-6 sm:grid-cols-3">
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {others.map((p) => (
               <Link
                 key={p.slug}
