@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Hero from "@/components/Hero";
+import Faq from "@/components/Faq";
 import SectionHeading from "@/components/SectionHeading";
 import ProductCard from "@/components/ProductCard";
 import CtaBand from "@/components/CtaBand";
@@ -88,9 +89,27 @@ export default function HomePage() {
               A dependable backbone for construction across East Africa
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-navy-600">
-              Headquartered in Kampala, SolidCore Construction Supplies Limited specialises in
-              construction equipment hire, concrete logistics and bulk material transportation.
-              Founded on operational discipline and service excellence, we serve contractors,
+              Headquartered in Kampala, SolidCore Construction Supplies Limited supplies{" "}
+              <Link href="/products/concrete-mixer-truck" className="font-semibold text-navy hover:text-orange">
+                ready-mix concrete by 10m³ mixer truck
+              </Link>
+              ,{" "}
+              <Link href="/products/concrete-pumps" className="font-semibold text-navy hover:text-orange">
+                concrete pumps for 7 to 20+ floors
+              </Link>
+              ,{" "}
+              <Link href="/products/cement" className="font-semibold text-navy hover:text-orange">
+                cement
+              </Link>
+              ,{" "}
+              <Link href="/products/steel-rods" className="font-semibold text-navy hover:text-orange">
+                steel reinforcement bars
+              </Link>{" "}
+              and{" "}
+              <Link href="/products/logistics-truck" className="font-semibold text-navy hover:text-orange">
+                heavy-duty haulage
+              </Link>
+              . Founded on operational discipline and service excellence, we serve contractors,
               developers, infrastructure agencies and government project teams who demand reliable,
               high-performance support.
             </p>
@@ -283,6 +302,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      <Faq />
       <CtaBand />
     </>
   );

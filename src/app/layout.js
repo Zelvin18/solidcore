@@ -105,11 +105,27 @@ export const metadata = {
   // Favicons are served from src/app/favicon.ico, icon.png and apple-icon.png (Next.js file conventions).
 };
 
-// Structured data (JSON-LD) so Google can show rich business results & sitelinks.
+// Structured data (JSON-LD). One connected graph — Organization, WebSite and
+// the LocalBusiness with its branches and services — so Google (and AI
+// answers built on it) can identify the company as a single, real entity.
 function StructuredData() {
-  const branches = site.offices.map((o) => ({
+  const orgId = `${site.url}/#organization`;
+  const bizId = `${site.url}/#business`;
+  const siteId = `${site.url}/#website`;
+
+  const primaryAddress = {
+    "@type": "PostalAddress",
+    streetAddress: site.offices[0].address,
+    addressLocality: "Kampala",
+    addressRegion: "Central Region",
+    addressCountry: "UG",
+  };
+
+  const branches = site.offices.map((o, i) => ({
     "@type": "LocalBusiness",
-    name: `${site.legalName} — ${o.label}`,
+    "@id": `${site.url}/#branch-${i + 1}`,
+    name: `${site.name} — ${o.label}`,
+    parentOrganization: { "@id": orgId },
     address: {
       "@type": "PostalAddress",
       streetAddress: o.address,
@@ -117,49 +133,90 @@ function StructuredData() {
       addressCountry: "UG",
     },
     telephone: site.phonePrimary,
+    ...(o.note ? { description: o.note } : {}),
   }));
 
   const data = {
     "@context": "https://schema.org",
-    "@type": ["GeneralContractor", "HardwareStore"],
-    "@id": `${site.url}/#business`,
-    name: site.legalName,
-    alternateName: "SolidCore Construction Supplies",
-    url: site.url,
-    logo: `${site.url}/brand/logo.jpeg`,
-    image: `${site.url}/og.jpg`,
-    description:
-      "Supplier of concrete mixer trucks, concrete pumps, ready-mix concrete, cement, steel reinforcement bars and construction logistics in Kampala, Uganda and across East Africa.",
-    telephone: site.phonePrimary,
-    email: site.email,
-    priceRange: "$$",
-    areaServed: [
-      { "@type": "Country", name: "Uganda" },
-      { "@type": "AdministrativeArea", name: "East Africa" },
-    ],
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: site.offices[0].address,
-      addressLocality: "Kampala",
-      addressCountry: "UG",
-    },
-    openingHoursSpecification: [
+    "@graph": [
       {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        opens: "07:00",
-        closes: "18:00",
+        "@type": "Organization",
+        "@id": orgId,
+        name: site.legalName,
+        legalName: site.legalName,
+        alternateName: ["SolidCore Construction Supplies", "SolidCore", "SCS Uganda"],
+        url: site.url,
+        logo: { "@type": "ImageObject", url: `${site.url}/icon.png`, width: 512, height: 512 },
+        image: `${site.url}/og.jpg`,
+        description:
+          "Kampala-based supplier of ready-mix concrete (10m³ mixer trucks), concrete pumps for 7 to 20+ floors, cement, steel reinforcement bars and construction haulage across Uganda and East Africa.",
+        email: site.email,
+        telephone: site.phonePrimary,
+        address: primaryAddress,
+        foundingLocation: { "@type": "Place", name: "Kampala, Uganda" },
+        areaServed: [
+          { "@type": "Country", name: "Uganda" },
+          { "@type": "AdministrativeArea", name: "East Africa" },
+        ],
+        knowsAbout: [
+          "Ready-mix concrete",
+          "Concrete mixer trucks",
+          "Concrete pumps and boom pumps",
+          "Cement supply",
+          "Steel reinforcement bars (rebar)",
+          "Construction logistics and bulk haulage",
+        ],
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            telephone: site.phonePrimary,
+            contactType: "sales",
+            areaServed: "UG",
+            availableLanguage: ["en"],
+          },
+        ],
+      },
+      {
+        "@type": "WebSite",
+        "@id": siteId,
+        url: site.url,
+        name: site.name,
+        publisher: { "@id": orgId },
+        inLanguage: "en-UG",
+      },
+      {
+        "@type": ["HardwareStore", "GeneralContractor"],
+        "@id": bizId,
+        name: site.legalName,
+        parentOrganization: { "@id": orgId },
+        url: site.url,
+        logo: `${site.url}/icon.png`,
+        image: `${site.url}/og.jpg`,
+        telephone: site.phonePrimary,
+        email: site.email,
+        priceRange: "$$",
+        address: primaryAddress,
+        areaServed: { "@type": "Country", name: "Uganda" },
+        openingHoursSpecification: [
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            opens: "07:00",
+            closes: "18:00",
+          },
+        ],
+        department: branches,
+        makesOffer: products.map((p) => ({
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: p.name,
+            description: p.short,
+            url: `${site.url}/products/${p.slug}`,
+          },
+        })),
       },
     ],
-    department: branches,
-    makesOffer: products.map((p) => ({
-      "@type": "Offer",
-      itemOffered: {
-        "@type": "Service",
-        name: p.name,
-        description: p.short,
-      },
-    })),
   };
 
   return (

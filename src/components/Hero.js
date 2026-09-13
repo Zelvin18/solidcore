@@ -11,7 +11,7 @@ export default function Hero() {
       <div className="absolute inset-0 hidden lg:block">
         <Image
           src="/gallery/banner.jpeg"
-          alt="SolidCore concrete mixer truck"
+          alt="SolidCore Construction Supplies 10m³ concrete mixer truck at the Kampala yard"
           fill
           sizes="100vw"
           quality={70}

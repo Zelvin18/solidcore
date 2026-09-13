@@ -6,7 +6,7 @@ import CtaBand from "@/components/CtaBand";
 import Reveal from "@/components/Reveal";
 import Icon from "@/components/Icons";
 import { products, getProduct } from "@/data/products";
-import { whatsappLink } from "@/lib/site";
+import { site, whatsappLink } from "@/lib/site";
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
@@ -35,14 +35,36 @@ export default function ProductDetail({ params }) {
 
   const others = products.filter((p) => p.slug !== product.slug);
 
+  const productUrl = `${site.url}/products/${product.slug}`;
+  const serviceLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${productUrl}#service`,
+    name: product.name,
+    serviceType: product.category,
+    description: product.short,
+    url: productUrl,
+    image: `${site.url}${product.hero}`,
+    provider: { "@id": `${site.url}/#business` },
+    areaServed: { "@type": "Country", name: "Uganda" },
+    offers: {
+      "@type": "Offer",
+      availability: "https://schema.org/InStock",
+      url: `${site.url}/quote?product=${product.slug}`,
+    },
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
       <PageHero
         eyebrow={product.category}
         title={product.name}
         description={product.tagline}
         image={product.hero}
+        alt={`${product.name} supplied by SolidCore Construction Supplies, Kampala, Uganda`}
         crumb={product.name}
+        trail={[{ name: "Products", href: "/products" }]}
       />
 
       {/* Overview */}
